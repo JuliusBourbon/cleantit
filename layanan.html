@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean.It - Layanan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        .font-cursive {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .font-sans {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="m-0 p-0 font-sans overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="bg-white flex justify-between items-center px-10 py-6 shadow-sm w-full z-20 relative">
+        <!-- Logo -->
+        <div class="text-[#0ea5e9] text-5xl font-cursive tracking-tight">
+            Clean.It
+        </div>
+        <!-- Menu -->
+        <div class="hidden md:flex space-x-8 text-[#0ea5e9] text-sm font-bold uppercase tracking-wide">
+            <a href="layanan.html" class="hover:text-blue-700 transition-colors">Layanan</a>
+            <a href="tentang-kami.html" class="hover:text-blue-700 transition-colors">Tentang Kami</a>
+            <a href="galeri.html" class="hover:text-blue-700 transition-colors">Galeri</a>
+            <a href="proses-pemesanan.html" class="hover:text-blue-700 transition-colors">Proses Pemesanan</a>
+            <a href="kontak.html" class="hover:text-blue-700 transition-colors">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="h-[calc(100vh-100px)] w-full bg-cover bg-center relative"
+        style="background-image: url('https://picsum.photos/1920/1080?shoes');">
+        <!-- Optional Overlay if the image is too bright, based on the mockup it's slightly dark -->
+        <div class="absolute inset-0 bg-black/40 z-0"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 h-full flex flex-col justify-end px-10 sm:px-20 pb-20">
+            <h1
+                class="text-[#00a8ff] text-7xl sm:text-[90px] font-cursive mb-2 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] leading-none -ml-2">
+                Layanan Profesional
+            </h1>
+            <p
+                class="text-[#ffd700] text-2xl sm:text-3xl font-serif uppercase tracking-wider drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] ml-2">
+                Cepat & Bersih Untuk Setiap Jenis Sepatu
+            </p>
+        </div>
+    </div>
+
+    <!-- Dynamic Service Detail Section (Hidden initially) -->
+    <div id="service-detail-section" class="bg-[#00a8ff] w-full px-10 sm:px-20 py-16 hidden">
+        <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
+            <h2 id="service-title" class="text-[#ffd700] text-5xl sm:text-6xl font-cursive mb-6 tracking-tight"></h2>
+            <div id="service-desc" class="text-white text-lg sm:text-xl leading-relaxed font-sans space-y-6">
+                <!-- Description inserted via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Grid Section -->
+    <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Shoe Wash Treatment -->
+        <div onclick="showService('Shoe Wash', 'Layanan profesional dan perawatan sepatu. Proses ini menggunakan cairan pembersih khusus, sikat, dan metode yang disesuaikan dengan material sepatu (seperti canvas, seude, atau kulit) untuk mengangkat kotoran, menghilangkan noda, serta mencegah kerusakan')"
+            class="relative group h-80 lg:h-[400px] overflow-hidden cursor-pointer">
+            <img src="https://picsum.photos/600/800?sig=1" alt="Shoe Wash Treatment"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent transition-opacity group-hover:opacity-80">
+            </div>
+            <div class="absolute bottom-0 w-full py-6 text-center">
+                <h3 class="text-white text-4xl font-serif">Shoe Wash Treatment</h3>
+            </div>
+        </div>
+        <!-- Unyellowing Treatment -->
+        <div onclick="showService('Unyellowing Treatment', 'Proses perawatan restorasi kimiawi untuk menghilangkan noda kuning (yellowing) pada sepatu. Noda ini umumnya muncul pada bagian sol (midsole) akibat oksidasi, paparan sinar matahari, atau penyimpanan yang lembab. Perawatan ini mengembalikan warna putih aslinya agar terlihat seperti baru.')"
+            class="relative group h-80 lg:h-[400px] overflow-hidden cursor-pointer">
+            <img src="https://picsum.photos/600/800?sig=2" alt="Unyellowing Treatment"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent transition-opacity group-hover:opacity-80">
+            </div>
+            <div class="absolute bottom-0 w-full p-6 text-center">
+                <h3 class="text-white text-4xl font-serif">Unyellowing Treatment</h3>
+            </div>
+        </div>
+        <!-- Leather Treatment -->
+        <div onclick="showService('Leather Treatment', 'Serangkaian proses perawatan, pembersihan, dan pemeliharaan untuk material berbahan kulit (seperti tas, sepatu, jaket, atau sofa). Tujuannya adalah mengangkat kotoran, melembapkan, mencegah material mengeras atau pecah-pecah, serta menjaga kilau alami dan keawetan barang.')"
+            class="relative group h-80 lg:h-[400px] overflow-hidden cursor-pointer">
+            <img src="https://picsum.photos/600/800?sig=3" alt="Leather Treatment"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent transition-opacity group-hover:opacity-80">
+            </div>
+            <div class="absolute bottom-0 w-full p-6 text-center">
+                <h3 class="text-white text-4xl font-serif">Leather Treatment</h3>
+            </div>
+        </div>
+        <!-- Cap Treatment -->
+        <div onclick="showService('Cap Treatment', 'Layanan pembersihan dan perawatan khusus untuk berbagai jenis topi agar bebas dari noda, kotoran, dan bau apek tanpa merusak bentuk maupun warnanya. Berbeda dengan mencuci biasa, metode ini menggunakan teknik deep cleaning (pembersihan menyeluruh), sikat khusus, dan cairan pembersih yang disesuaikan dengan material topi.')"
+            class="relative group h-80 lg:h-[400px] overflow-hidden cursor-pointer">
+            <img src="https://picsum.photos/600/800?sig=4" alt="Cap Treatment"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent transition-opacity group-hover:opacity-80">
+            </div>
+            <div class="absolute bottom-0 w-full p-6 text-center">
+                <h3 class="text-white text-4xl font-serif">Cap Treatment</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showService(title, desc) {
+            const section = document.getElementById('service-detail-section');
+            const titleEl = document.getElementById('service-title');
+            const descEl = document.getElementById('service-desc');
+
+            titleEl.innerText = title;
+            descEl.innerHTML = '<p>' + desc + '</p>';
+
+            section.classList.remove('hidden');
+            section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="bg-white pt-16">
+        <div class="px-10 sm:px-20 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                <!-- Column 1 -->
+                <div>
+                    <div class="text-[#0ea5e9] text-6xl font-cursive mb-4 tracking-tight">
+                        Clean.It
+                    </div>
+                    <p class="text-[#0ea5e9] text-xl font-medium mt-6">
+                        Setiap Waktu, Bersih Selalu
+                    </p>
+                </div>
+                <!-- Column 2 -->
+                <div class="flex flex-col items-center">
+                    <h3 class="text-[#0ea5e9] text-xl font-black uppercase tracking-widest mb-6">Tentang</h3>
+                    <div class="flex flex-col items-center space-y-4 text-[#0ea5e9] text-lg font-medium">
+                        <a href="layanan.html" class="hover:text-blue-700 transition-colors uppercase">Layanan</a>
+                        <a href="tentang-kami.html" class="hover:text-blue-700 transition-colors uppercase">Tentang
+                            Kami</a>
+                        <a href="galeri.html" class="hover:text-blue-700 transition-colors uppercase">Galeri</a>
+                    </div>
+                </div>
+                <!-- Column 3 -->
+                <div class="flex flex-col items-center">
+                    <h3 class="text-[#0ea5e9] text-xl font-black uppercase tracking-widest mb-6">Layanan Pelanggan</h3>
+                    <div class="flex flex-col items-center space-y-4 text-[#0ea5e9] text-lg font-medium">
+                        <a href="proses-pemesanan.html" class="hover:text-blue-700 transition-colors uppercase">Proses
+                            Pemesanan</a>
+                        <a href="kontak.html" class="hover:text-blue-700 transition-colors uppercase">Kontak</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="border-t border-[#0ea5e9]/30 py-6 text-center">
+            <p class="text-[#0ea5e9] text-base font-medium">
+                COPYRIGHTS Clean.It &copy; 2026. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

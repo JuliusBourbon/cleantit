@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean.It - Beranda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        .font-cursive {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .font-sans {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="m-0 p-0 font-sans overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="bg-white flex justify-between items-center px-10 py-6 shadow-sm w-full z-20 relative">
+        <!-- Logo -->
+        <div class="text-[#0ea5e9] text-5xl font-cursive tracking-tight">
+            Clean.It
+        </div>
+        <!-- Menu -->
+        <div class="hidden md:flex space-x-8 text-[#0ea5e9] text-sm font-bold uppercase tracking-wide">
+            <a href="layanan.html" class="hover:text-blue-700 transition-colors">Layanan</a>
+            <a href="tentang-kami.html" class="hover:text-blue-700 transition-colors">Tentang Kami</a>
+            <a href="galeri.html" class="hover:text-blue-700 transition-colors">Galeri</a>
+            <a href="proses-pemesanan.html" class="hover:text-blue-700 transition-colors">Proses Pemesanan</a>
+            <a href="kontak.html" class="hover:text-blue-700 transition-colors">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="h-[calc(100vh-100px)] w-full bg-cover bg-center relative"
+        style="background-image: url('https://picsum.photos/1920/1080');">
+        <!-- Optional Overlay if the image is too bright, based on the mockup it's slightly dark -->
+        <div class="absolute inset-0 bg-black/30 z-0"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 h-full flex flex-col justify-start px-10 sm:px-20 pt-24">
+            <h1 class="text-[#00B2FF] text-7xl sm:text-[110px] font-cursive mb-0 leading-none -ml-4">
+                Setiap Waktu
+            </h1>
+            <h2 class="text-[#FEEC41] text-4xl sm:text-6xl font-black uppercase tracking-tight ml-12 sm:ml-40 mt-2">
+                Bersih Selalu
+            </h2>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-[#00a8ff] w-full px-10 sm:px-20 py-16">
+        <div class="max-w-4xl">
+            <h2 class="text-[#ffd700] text-7xl font-cursive mb-6 tracking-tight">Clean.It</h2>
+            <div class="text-white text-lg sm:text-xl leading-relaxed font-sans space-y-6">
+                <p>
+                    Usaha clean.it berawal sebagai sebuah usaha yang berfokus pada jasa perawatan
+                    dan cuci sepatu (shoe laundry). Bisnis ini resmi mulai beroperasi pada 18
+                    Februari 2019.
+                </p>
+                <p>
+                    Ide pendirian bisnis ini muncul dari peluang pasar, yakni penyelesaian masalah masyarakat
+                    dalam mencuci dan merawat sepatunya secara benar dan aman.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-white pt-16">
+        <div class="px-10 sm:px-20 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                <!-- Column 1 -->
+                <div>
+                    <div class="text-[#0ea5e9] text-6xl font-cursive mb-4 tracking-tight">
+                        Clean.It
+                    </div>
+                    <p class="text-[#0ea5e9] text-xl font-medium mt-6">
+                        Setiap Waktu, Bersih Selalu
+                    </p>
+                </div>
+                <!-- Column 2 -->
+                <div class="flex flex-col items-center">
+                    <h3 class="text-[#0ea5e9] text-xl font-black uppercase tracking-widest mb-6">Tentang</h3>
+                    <div class="flex flex-col items-center space-y-4 text-[#0ea5e9] text-lg font-medium">
+                        <a href="layanan.html" class="hover:text-blue-700 transition-colors uppercase">Layanan</a>
+                        <a href="tentang-kami.html" class="hover:text-blue-700 transition-colors uppercase">Tentang
+                            Kami</a>
+                        <a href="galeri.html" class="hover:text-blue-700 transition-colors uppercase">Galeri</a>
+                    </div>
+                </div>
+                <!-- Column 3 -->
+                <div class="flex flex-col items-center">
+                    <h3 class="text-[#0ea5e9] text-xl font-black uppercase tracking-widest mb-6">Layanan Pelanggan</h3>
+                    <div class="flex flex-col items-center space-y-4 text-[#0ea5e9] text-lg font-medium">
+                        <a href="proses-pemesanan.html" class="hover:text-blue-700 transition-colors uppercase">Proses
+                            Pemesanan</a>
+                        <a href="kontak.html" class="hover:text-blue-700 transition-colors uppercase">Kontak</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="border-t border-[#0ea5e9]/30 py-6 text-center">
+            <p class="text-[#0ea5e9] text-base font-medium">
+                COPYRIGHTS Clean.It &copy; 2026. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
