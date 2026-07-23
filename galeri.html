@@ -16,6 +16,16 @@
         .font-sans {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .hide-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
     </style>
 </head>
 
@@ -61,22 +71,38 @@
             Portofolio
         </h2>
 
-        <!-- Gallery Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="w-full h-80 lg:h-[400px] overflow-hidden group">
+        <!-- Gallery Scroll -->
+        <div id="gallery-slider" class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar">
+            <div class="w-72 sm:w-80 lg:w-[400px] flex-shrink-0 h-80 lg:h-[400px] overflow-hidden group snap-center">
                 <img src="assets/sepatu1.jpeg" alt="Portofolio 1"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             </div>
-            <div class="w-full h-80 lg:h-[400px] overflow-hidden group">
+            <div class="w-72 sm:w-80 lg:w-[400px] flex-shrink-0 h-80 lg:h-[400px] overflow-hidden group snap-center">
                 <img src="assets/sepatu2.jpeg" alt="Portofolio 2"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             </div>
-            <div class="w-full h-80 lg:h-[400px] overflow-hidden group">
+            <div class="w-72 sm:w-80 lg:w-[400px] flex-shrink-0 h-80 lg:h-[400px] overflow-hidden group snap-center">
                 <img src="assets/sepatu3.jpeg" alt="Portofolio 3"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             </div>
-            <div class="w-full h-80 lg:h-[400px] overflow-hidden group">
+            <div class="w-72 sm:w-80 lg:w-[400px] flex-shrink-0 h-80 lg:h-[400px] overflow-hidden group snap-center">
                 <img src="assets/sepatu4.jpeg" alt="Portofolio 4"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="w-72 sm:w-80 lg:w-[400px] flex-shrink-0 h-80 lg:h-[400px] overflow-hidden group snap-center">
+                <img src="assets/sepatu5.jpeg" alt="Portofolio 1"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="w-72 sm:w-80 lg:w-[400px] flex-shrink-0 h-80 lg:h-[400px] overflow-hidden group snap-center">
+                <img src="assets/sepatu6.jpeg" alt="Portofolio 2"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="w-72 sm:w-80 lg:w-[400px] flex-shrink-0 h-80 lg:h-[400px] overflow-hidden group snap-center">
+                <img src="assets/sepatu7.jpeg" alt="Portofolio 3"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="w-72 sm:w-80 lg:w-[400px] flex-shrink-0 h-80 lg:h-[400px] overflow-hidden group snap-center">
+                <img src="assets/sepatu8.jpeg" alt="Portofolio 4"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
             </div>
         </div>
@@ -124,6 +150,53 @@
         </div>
     </footer>
 
+    <script>
+        const slider = document.getElementById('gallery-slider');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.style.cursor = 'grabbing';
+            // Disable snapping while dragging for smoother feeling
+            slider.classList.remove('snap-mandatory');
+            slider.classList.remove('snap-x');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+            slider.classList.add('snap-mandatory');
+            slider.classList.add('snap-x');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+            slider.classList.add('snap-mandatory');
+            slider.classList.add('snap-x');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll-fast factor
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Set default cursor
+        slider.style.cursor = 'grab';
+
+        // Prevent native image dragging which interferes with our script
+        const images = slider.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('dragstart', (e) => e.preventDefault());
+        });
+    </script>
 </body>
 
 </html>
